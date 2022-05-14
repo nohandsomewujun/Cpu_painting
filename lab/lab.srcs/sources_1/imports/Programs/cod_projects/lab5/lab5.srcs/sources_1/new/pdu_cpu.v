@@ -53,6 +53,11 @@ wire [31:0] chk_pc;
 wire [15:0] chk_addr;
 wire [31:0] chk_data;
 
+//paint wire
+wire paint_we;
+wire [31:0] paint_data;
+wire [31:0] paint_addr;
+
 
 pdu p1(
       .clk(clk), 
@@ -90,7 +95,10 @@ cpu_pl c1(
       .io_din(io_din),
       .chk_pc(chk_pc),
       .chk_addr(chk_addr), 
-      .chk_data(chk_data) 
+      .chk_data(chk_data),
+      .paint_we(paint_we),
+      .paint_addr(paint_addr),
+      .paint_data(paint_data)
       );
 
 endmodule

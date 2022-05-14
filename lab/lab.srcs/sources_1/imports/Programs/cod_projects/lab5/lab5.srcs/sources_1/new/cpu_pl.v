@@ -34,8 +34,11 @@ module  cpu_pl (
   //Debug_BUS
   output [31:0] chk_pc,
   input [15:0] chk_addr,
-  output reg [31:0] chk_data
+  output reg [31:0] chk_data,
 
+  output reg paint_we,
+  output [31:0] paint_data,
+  output [31:0] paint_addr
 );
 
 wire [31:0] rf_data;   //从RF读取的数据
@@ -284,16 +287,28 @@ end
 //MEM
 wire [31:0] DM_rd;
 wire we;
-//assign we = ~y[15] & ctrlm[12];
-assign we = ~(y == 0) & ctrlm[12];
+assign we = ~y[15] & ctrlm[12];
+//assign we = ~(y == 0) & ctrlm[12];
+//deal with paint
+//we
+always @(*) begin
+  if (y[15] && ctrlm[12]) begin
+    paint_we = 1;
+  end
+  else paint_we = 0;
+end
+//data
+assign paint_data = bm;
+
+
 data_memory d1(
   .a(y >> 2), 
   .d(bm), 
-  .dpra(chk_addr[11:0]), 
+  .dpra(0), 
   .clk(clk), 
   .we(we), 
   .spo(DM_rd), 
-  .dpo(m_data)
+  .dpo(paint_addr)
   );
 
 // MEM/WB
