@@ -1,0 +1,125 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat May 14 21:56:36 2022
+# Process ID: 16472
+# Current directory: F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17692 F:\jisuanjizuchengyuanli\vivado2.2\lab6\Cpu_painting\lab\lab.xpr
+# Log file: F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/vivado.log
+# Journal file: F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.xpr
+update_compile_order -fileset sources_1
+close [ open F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/new/VDT.v w ]
+add_files F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/new/VDT.v
+update_compile_order -fileset sources_1
+close [ open F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/new/SRA.v w ]
+add_files F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/new/SRA.v
+update_compile_order -fileset sources_1
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name VRAM -dir f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip
+set_property -dict [list CONFIG.Component_Name {VRAM} CONFIG.Memory_Type {Simple_Dual_Port_RAM} CONFIG.Write_Width_A {12} CONFIG.Write_Depth_A {30000} CONFIG.Read_Width_A {12} CONFIG.Operating_Mode_A {NO_CHANGE} CONFIG.Enable_A {Always_Enabled} CONFIG.Write_Width_B {12} CONFIG.Read_Width_B {12} CONFIG.Enable_B {Always_Enabled} CONFIG.Register_PortA_Output_of_Memory_Primitives {false} CONFIG.Register_PortB_Output_of_Memory_Primitives {false} CONFIG.Load_Init_File {true} CONFIG.Coe_File {F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab6.coe} CONFIG.Fill_Remaining_Memory_Locations {true} CONFIG.Remaining_Memory_Locations {FFF} CONFIG.Port_B_Clock {100} CONFIG.Port_B_Enable_Rate {100}] [get_ips VRAM]
+generate_target {instantiation_template} [get_files f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM.xci]
+update_compile_order -fileset sources_1
+generate_target all [get_files  f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM.xci]
+catch { config_ip_cache -export [get_ips -all VRAM] }
+export_ip_user_files -of_objects [get_files f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM.xci]
+launch_runs -jobs 4 VRAM_synth_1
+wait_on_run VRAM_synth_1
+export_simulation -of_objects [get_files f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM.xci] -directory F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.ip_user_files/sim_scripts -ip_user_files_dir F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.ip_user_files -ipstatic_source_dir F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.ip_user_files/ipstatic -lib_map_path [list {modelsim=F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/compile_simlib/modelsim} {questa=F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/compile_simlib/questa} {riviera=F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/compile_simlib/riviera} {activehdl=F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 6.0 -module_name clk50 -dir f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip
+set_property -dict [list CONFIG.Component_Name {clk50} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {50} CONFIG.MMCM_CLKOUT0_DIVIDE_F {20.000} CONFIG.CLKOUT1_JITTER {151.636}] [get_ips clk50]
+generate_target {instantiation_template} [get_files f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/clk50/clk50.xci]
+update_compile_order -fileset sources_1
+generate_target all [get_files  f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/clk50/clk50.xci]
+catch { config_ip_cache -export [get_ips -all clk50] }
+export_ip_user_files -of_objects [get_files f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/clk50/clk50.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/clk50/clk50.xci]
+launch_runs -jobs 4 clk50_synth_1
+wait_on_run clk50_synth_1
+export_simulation -of_objects [get_files f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/clk50/clk50.xci] -directory F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.ip_user_files/sim_scripts -ip_user_files_dir F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.ip_user_files -ipstatic_source_dir F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.ip_user_files/ipstatic -lib_map_path [list {modelsim=F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/compile_simlib/modelsim} {questa=F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/compile_simlib/questa} {riviera=F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/compile_simlib/riviera} {activehdl=F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+set_property -dict [list CONFIG.coefficient_file {F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/testpaint1_text.coe}] [get_ips instrcution_memory]
+generate_target all [get_files  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/instrcution_memory/instrcution_memory.xci]
+catch { config_ip_cache -export [get_ips -all instrcution_memory] }
+export_ip_user_files -of_objects [get_files F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/instrcution_memory/instrcution_memory.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/instrcution_memory/instrcution_memory.xci]
+launch_runs -jobs 8 instrcution_memory_synth_1
+wait_on_run instrcution_memory_synth_1
+export_simulation -of_objects [get_files F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/instrcution_memory/instrcution_memory.xci] -directory F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.ip_user_files/sim_scripts -ip_user_files_dir F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.ip_user_files -ipstatic_source_dir F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.ip_user_files/ipstatic -lib_map_path [list {modelsim=F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/compile_simlib/modelsim} {questa=F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/compile_simlib/questa} {riviera=F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/compile_simlib/riviera} {activehdl=F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+set_property -dict [list CONFIG.coefficient_file {F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/testpaint1_data.coe}] [get_ips data_memory]
+generate_target all [get_files  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/data_memory/data_memory.xci]
+catch { config_ip_cache -export [get_ips -all data_memory] }
+export_ip_user_files -of_objects [get_files F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/data_memory/data_memory.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/data_memory/data_memory.xci]
+launch_runs -jobs 8 data_memory_synth_1
+wait_on_run data_memory_synth_1
+export_simulation -of_objects [get_files F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/data_memory/data_memory.xci] -directory F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.ip_user_files/sim_scripts -ip_user_files_dir F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.ip_user_files -ipstatic_source_dir F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.ip_user_files/ipstatic -lib_map_path [list {modelsim=F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/compile_simlib/modelsim} {questa=F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/compile_simlib/questa} {riviera=F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/compile_simlib/riviera} {activehdl=F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+export_ip_user_files -of_objects  [get_files f:/jisuanjizuchengyuanli/vivado2.2/lab6/testis_v2.coe] -no_script -reset -force -quiet
+remove_files  f:/jisuanjizuchengyuanli/vivado2.2/lab6/testis_v2.coe
+export_ip_user_files -of_objects  [get_files f:/jisuanjizuchengyuanli/vivado2.2/lab6/test.coe] -no_script -reset -force -quiet
+remove_files  f:/jisuanjizuchengyuanli/vivado2.2/lab6/test.coe
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/impl_1/pdu_cpu.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/impl_1/pdu_cpu.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/impl_1/pdu_cpu.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/impl_1/pdu_cpu.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/impl_1/pdu_cpu.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/impl_1/pdu_cpu.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/impl_1/pdu_cpu.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/impl_1/pdu_cpu.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]

@@ -35,8 +35,13 @@ module pdu_cpu (
   output [15:0] led,    //led15-0
   output [7:0] an,      //an7-0
   output [6:0] seg,     //ca-cg
-  output [2:0] seg_sel  //led17
+  output [2:0] seg_sel,  //led17
 
+  output [3:0] pred,	//像素颜色 (prgb)：红
+  output [3:0] pgreen, 	//像素颜色 (prgb)：绿
+  output [3:0] pblue, 	//像素颜色 (prgb)：蓝
+  output hs,		//行同步
+  output vs		//场同步
 );
 
 wire clk_cpu;
@@ -57,6 +62,18 @@ wire [31:0] chk_data;
 wire paint_we;
 wire [31:0] paint_data;
 wire [31:0] paint_addr;
+
+//vRAM
+wire [14:0] waddr, raddr;
+wire [11:0] pdata ,rdata, outputdata; 
+
+//VDT
+wire [10:0] h_addr,v_addr;
+wire pclk;
+
+assign pred=outputdata[3:0];
+assign pgreen=outputdata[7:4];
+assign pblue=outputdata[11:8];
 
 
 pdu p1(
@@ -100,5 +117,11 @@ cpu_pl c1(
       .paint_addr(paint_addr),
       .paint_data(paint_data)
       );
+      
+clk50 c2(.clk_in1(clk),.reset(0),.clk_out1(pclk));
+addr_hash a1(.paint_addr(paint_addr), .paint_addr_hash(waddr));
 
+VRAM v1(.addra(waddr),.clka(clk),.dina(paint_data),.wea(paint_we),.addrb(raddr),.clkb(clk),.doutb(rdata));
+SRA s1(.h_addr(h_addr),.v_addr(v_addr),.rdata(rdata),.raddr(raddr),.pdata(pdata));
+VDT v2(.clk(pclk),.rst(~rstn),.rd_data(pdata),.hs(hs),.vs(vs),.vga_data(outputdata),.h_cnt(h_addr),.v_cnt(v_addr));
 endmodule

@@ -79,6 +79,8 @@ assign io_we = (y == 0) & ctrlm[12];
 assign io_rd = 1;//for temp
 //debug_bus
 assign chk_pc = pc;
+
+wire [31:0] instruction;
 always @(*) begin
   case(chk_addr[15:12])
   0: begin
@@ -113,7 +115,7 @@ end
 
 
 //IF
-wire [31:0] pc_next, pc_4, instruction, pc_imm, pc_next_n, pc_src_jalr;
+wire [31:0] pc_next, pc_4, pc_imm, pc_next_n, pc_src_jalr;
 wire pc_write, pc_src, pc_jalr;
 
 assign pc_next = pc_src ? pc_imm : pc_4;

@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Wed Apr 27 17:32:20 2022
-// Host        : AA8B running 64-bit major release  (build 9200)
+// Date        : Sat May 14 22:52:06 2022
+// Host        : DESKTOP-LEJH40V running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               Y:/Programs/cod_projects/lab5/lab5.srcs/sources_1/ip/data_memory/data_memory_stub.v
+//               F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/data_memory/data_memory_stub.v
 // Design      : data_memory
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100ticsg324-1L
