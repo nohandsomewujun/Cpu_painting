@@ -154,7 +154,7 @@ module  pdu(
     always @(posedge clk_db or posedge rst) begin
         if (rst)
             cnt_btn_db_r <= 5'h0;
-        else if ((|(btn ^ btn_db_r)) & (~cnt_btn_db_r[4]))
+        else if ((|(btn ^ btn_db_r)) & (~cnt_btn_db_r[0]))
             cnt_btn_db_r <= cnt_btn_db_r + 5'h1;
         else
             cnt_btn_db_r <= 5'h0;
@@ -163,7 +163,7 @@ module  pdu(
     always@(posedge clk_db or posedge rst) begin  
         if (rst)
             btn_db_r <= btn;
-        else if (cnt_btn_db_r[4])
+        else if (cnt_btn_db_r[0])
             btn_db_r <= btn;
     end
 

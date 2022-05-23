@@ -24,12 +24,13 @@ module pdu_cpu (
   input clk,            //clk100mhz
   input rstn,           //cpu_resetn
 
-  input step,           //btnu
   input cont,           //btnd
   input chk,            //btnr
   input data,           //btnc
   input del,            //btnl
   input [15:0] x,       //sw15-0
+  input ps2_clk,        //ps2_clk
+  input ps2_data,       //ps2_data
 
   output stop,          //led16r
   output [15:0] led,    //led15-0
@@ -37,13 +38,14 @@ module pdu_cpu (
   output [6:0] seg,     //ca-cg
   output [2:0] seg_sel,  //led17
 
-  output [3:0] pred,	//ÏñËØÑÕÉ« (prgb)£ººì
-  output [3:0] pgreen, 	//ÏñËØÑÕÉ« (prgb)£ºÂÌ
-  output [3:0] pblue, 	//ÏñËØÑÕÉ« (prgb)£ºÀ¶
-  output hs,		//ÐÐÍ¬²½
-  output vs		//³¡Í¬²½
+  output [3:0] pred,	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É« (prgb)ï¿½ï¿½ï¿½ï¿½
+  output [3:0] pgreen, 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É« (prgb)ï¿½ï¿½ï¿½ï¿½
+  output [3:0] pblue, 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É« (prgb)ï¿½ï¿½ï¿½ï¿½
+  output hs,		//ï¿½ï¿½Í¬ï¿½ï¿½
+  output vs		//ï¿½ï¿½Í¬ï¿½ï¿½
 );
-
+wire [7:0] ps2_byte;
+wire start;
 wire clk_cpu;
 wire rst_cpu;
 //io_bus
@@ -76,10 +78,20 @@ assign pgreen=outputdata[7:4];
 assign pblue=outputdata[11:8];
 
 
+reg [18:0] cnt;
+always @(posedge clk) begin
+      if (start == 1) begin
+            cnt = cnt + 1;
+      end
+end
+
+
+
+
 pdu p1(
       .clk(clk), 
       .rstn(rstn), 
-      .step(step),
+      .step(cnt[18]),
       .cont(cont),
       .chk(chk),
       .data(data),
@@ -124,4 +136,8 @@ addr_hash a1(.paint_addr(paint_addr), .paint_addr_hash(waddr));
 VRAM v1(.addra(waddr),.clka(clk),.dina(paint_data),.wea(paint_we),.addrb(raddr),.clkb(clk),.doutb(rdata));
 SRA s1(.h_addr(h_addr),.v_addr(v_addr),.rdata(rdata),.raddr(raddr),.pdata(pdata));
 VDT v2(.clk(pclk),.rst(~rstn),.rd_data(pdata),.hs(hs),.vs(vs),.vga_data(outputdata),.h_cnt(h_addr),.v_cnt(v_addr));
+
+//ps2_keyboard
+ps2_keybord ps1(.clk(clk), .rst_n(1), .ps2_clk(ps2_clk), .ps2_data(ps2_data), .ps2_byte(ps2_byte));
+ps2_ctrl ps2(.ps2_byte(ps2_byte), .start(start));
 endmodule
