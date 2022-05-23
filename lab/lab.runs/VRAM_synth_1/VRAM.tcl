@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 create_project -in_memory -part xc7a100ticsg324-1L
@@ -25,15 +26,15 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/wt [current_project]
-set_property parent.project_path F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.xpr [current_project]
-set_property XPM_LIBRARIES XPM_MEMORY [current_project]
+set_property webtalk.parent_dir Y:/Programs/Cpu_painting/lab/lab.cache/wt [current_project]
+set_property parent.project_path Y:/Programs/Cpu_painting/lab/lab.xpr [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/ip [current_project]
+set_property ip_output_repo y:/Programs/Cpu_painting/lab/lab.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_ip -quiet f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM.xci
-set_property used_in_implementation false [get_files -all f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_ooc.xdc]
+read_ip -quiet Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM.xci
+set_property used_in_implementation false [get_files -all y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -47,7 +48,7 @@ read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
-set cached_ip [config_ip_cache -export -no_bom  -dir F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/VRAM_synth_1 -new_name VRAM -ip [get_ips VRAM]]
+set cached_ip [config_ip_cache -export -no_bom  -dir Y:/Programs/Cpu_painting/lab/lab.runs/VRAM_synth_1 -new_name VRAM -ip [get_ips VRAM]]
 
 if { $cached_ip eq {} } {
 close [open __synthesis_is_running__ w]
@@ -88,32 +89,32 @@ write_checkpoint -force -noxdef VRAM.dcp
 create_report "VRAM_synth_1_synth_report_utilization_0" "report_utilization -file VRAM_utilization_synth.rpt -pb VRAM_utilization_synth.pb"
 
 if { [catch {
-  file copy -force F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/VRAM_synth_1/VRAM.dcp f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM.dcp
+  file copy -force Y:/Programs/Cpu_painting/lab/lab.runs/VRAM_synth_1/VRAM.dcp Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_stub.v
+  write_verilog -force -mode synth_stub Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_stub.vhdl
+  write_vhdl -force -mode synth_stub Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_sim_netlist.v
+  write_verilog -force -mode funcsim Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -123,47 +124,47 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/VRAM_synth_1/VRAM.dcp f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM.dcp
+  file copy -force Y:/Programs/Cpu_painting/lab/lab.runs/VRAM_synth_1/VRAM.dcp Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/VRAM_synth_1/VRAM_stub.v f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_stub.v
+  file rename -force Y:/Programs/Cpu_painting/lab/lab.runs/VRAM_synth_1/VRAM_stub.v Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/VRAM_synth_1/VRAM_stub.vhdl f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_stub.vhdl
+  file rename -force Y:/Programs/Cpu_painting/lab/lab.runs/VRAM_synth_1/VRAM_stub.vhdl Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/VRAM_synth_1/VRAM_sim_netlist.v f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_sim_netlist.v
+  file rename -force Y:/Programs/Cpu_painting/lab/lab.runs/VRAM_synth_1/VRAM_sim_netlist.v Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/VRAM_synth_1/VRAM_sim_netlist.vhdl f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_sim_netlist.vhdl
+  file rename -force Y:/Programs/Cpu_painting/lab/lab.runs/VRAM_synth_1/VRAM_sim_netlist.vhdl Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 }; # end if cached_ip 
 
-if {[file isdir F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.ip_user_files/ip/VRAM]} {
+if {[file isdir Y:/Programs/Cpu_painting/lab/lab.ip_user_files/ip/VRAM]} {
   catch { 
-    file copy -force f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_stub.v F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.ip_user_files/ip/VRAM
+    file copy -force Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_stub.v Y:/Programs/Cpu_painting/lab/lab.ip_user_files/ip/VRAM
   }
 }
 
-if {[file isdir F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.ip_user_files/ip/VRAM]} {
+if {[file isdir Y:/Programs/Cpu_painting/lab/lab.ip_user_files/ip/VRAM]} {
   catch { 
-    file copy -force f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_stub.vhdl F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.ip_user_files/ip/VRAM
+    file copy -force Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_stub.vhdl Y:/Programs/Cpu_painting/lab/lab.ip_user_files/ip/VRAM
   }
 }
 file delete __synthesis_is_running__

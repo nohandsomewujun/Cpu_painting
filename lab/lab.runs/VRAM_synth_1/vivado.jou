@@ -2,11 +2,11 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sat May 14 22:00:43 2022
-# Process ID: 11916
-# Current directory: F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/VRAM_synth_1
+# Start of session at: Sun May 22 15:24:49 2022
+# Process ID: 2536
+# Current directory: Y:/Programs/Cpu_painting/lab/lab.runs/VRAM_synth_1
 # Command line: vivado.exe -log VRAM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source VRAM.tcl
-# Log file: F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/VRAM_synth_1/VRAM.vds
-# Journal file: F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/VRAM_synth_1\vivado.jou
+# Log file: Y:/Programs/Cpu_painting/lab/lab.runs/VRAM_synth_1/VRAM.vds
+# Journal file: Y:/Programs/Cpu_painting/lab/lab.runs/VRAM_synth_1\vivado.jou
 #-----------------------------------------------------------
 source VRAM.tcl -notrace

@@ -25,48 +25,58 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/wt [current_project]
-set_property parent.project_path F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.xpr [current_project]
+set_property webtalk.parent_dir Y:/Programs/Cpu_painting/lab/lab.cache/wt [current_project]
+set_property parent.project_path Y:/Programs/Cpu_painting/lab/lab.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/ip [current_project]
+set_property ip_output_repo y:/Programs/Cpu_painting/lab/lab.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/testis_v2.coe
-add_files F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/test.coe
-add_files f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab6.coe
-add_files f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/testpaint1_text.coe
-add_files f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/testpaint1_data.coe
+add_files Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/testis_v2.coe
+add_files Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/test.coe
+add_files Y:/Programs/testpaint1_data.coe
+add_files Y:/Programs/Cpu_painting/coe_file/bg2.coe
+add_files Y:/Programs/Cpu_painting/coe_file/ustc2.coe
+add_files Y:/Programs/Cpu_painting/coe_file/testpaint1_data.coe
+add_files Y:/Programs/Cpu_painting/coe_file/ustccodh.coe
+add_files Y:/Programs/Cpu_painting/coe_file/ustccodh_data.coe
+add_files Y:/Programs/Cpu_painting/coe_file/recentversion.coe
+add_files Y:/Programs/Cpu_painting/coe_file/final.coe
+add_files Y:/Programs/Cpu_painting/coe_file/final_data.coe
+add_files y:/Programs/Cpu_painting/coe_file/finalv2.coe
+add_files y:/Programs/Cpu_painting/coe_file/finalv3.coe
 read_verilog -library xil_defaultlib {
-  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/Forwarding_unit.v
-  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/Hazard_detection_unit.v
-  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/RF.v
-  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/new/SRA.v
-  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/new/VDT.v
-  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/new/addr_hash.v
-  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/alu.v
-  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/control.v
-  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/cpu_pl.v
-  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/imm_gen.v
-  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/mux_2_32.v
-  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/mux_3_32.v
-  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/pc.v
-  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/imports/cod_projects/pdu-v1.1.v
-  F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/pdu_cpu.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/Forwarding_unit.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/Hazard_detection_unit.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/RF.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/new/SRA.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/new/VDT.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/new/addr_hash.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/alu.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/control.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/cpu_pl.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/imm_gen.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/mux_2_32.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/mux_3_32.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/pc.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/imports/cod_projects/pdu-v1.1.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/new/ps2_ctrl.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/imports/scripts/ps2_keybord.v
+  Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/imports/Programs/cod_projects/lab5/lab5.srcs/sources_1/new/pdu_cpu.v
 }
-read_ip -quiet f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM.xci
-set_property used_in_implementation false [get_files -all f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_ooc.xdc]
+read_ip -quiet Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM.xci
+set_property used_in_implementation false [get_files -all y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM_ooc.xdc]
 
-read_ip -quiet f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/clk50/clk50.xci
-set_property used_in_implementation false [get_files -all f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/clk50/clk50_board.xdc]
-set_property used_in_implementation false [get_files -all f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/clk50/clk50.xdc]
-set_property used_in_implementation false [get_files -all f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/clk50/clk50_ooc.xdc]
+read_ip -quiet Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/clk50/clk50.xci
+set_property used_in_implementation false [get_files -all y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/clk50/clk50_board.xdc]
+set_property used_in_implementation false [get_files -all y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/clk50/clk50.xdc]
+set_property used_in_implementation false [get_files -all y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/clk50/clk50_ooc.xdc]
 
-read_ip -quiet F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/instrcution_memory/instrcution_memory.xci
-set_property used_in_implementation false [get_files -all f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/instrcution_memory/instrcution_memory_ooc.xdc]
+read_ip -quiet Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/instrcution_memory/instrcution_memory.xci
+set_property used_in_implementation false [get_files -all y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/instrcution_memory/instrcution_memory_ooc.xdc]
 
-read_ip -quiet F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/data_memory/data_memory.xci
-set_property used_in_implementation false [get_files -all f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/data_memory/data_memory_ooc.xdc]
+read_ip -quiet Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/data_memory/data_memory.xci
+set_property used_in_implementation false [get_files -all y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/data_memory/data_memory_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -76,8 +86,8 @@ set_property used_in_implementation false [get_files -all f:/jisuanjizuchengyuan
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/constrs_1/imports/cod_projects/Nexys4DDR_Master.xdc
-set_property used_in_implementation false [get_files F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/constrs_1/imports/cod_projects/Nexys4DDR_Master.xdc]
+read_xdc Y:/Programs/Cpu_painting/lab/lab.srcs/constrs_1/imports/cod_projects/Nexys4DDR_Master.xdc
+set_property used_in_implementation false [get_files Y:/Programs/Cpu_painting/lab/lab.srcs/constrs_1/imports/cod_projects/Nexys4DDR_Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

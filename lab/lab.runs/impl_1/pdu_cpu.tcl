@@ -70,17 +70,17 @@ set rc [catch {
   create_project -in_memory -part xc7a100ticsg324-1L
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/wt [current_project]
-  set_property parent.project_path F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.xpr [current_project]
-  set_property ip_output_repo F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.cache/ip [current_project]
+  set_property webtalk.parent_dir Y:/Programs/Cpu_painting/lab/lab.cache/wt [current_project]
+  set_property parent.project_path Y:/Programs/Cpu_painting/lab/lab.xpr [current_project]
+  set_property ip_output_repo Y:/Programs/Cpu_painting/lab/lab.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.runs/synth_1/pdu_cpu.dcp
-  read_ip -quiet f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM.xci
-  read_ip -quiet f:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/clk50/clk50.xci
-  read_ip -quiet F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/instrcution_memory/instrcution_memory.xci
-  read_ip -quiet F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/sources_1/ip/data_memory/data_memory.xci
-  read_xdc F:/jisuanjizuchengyuanli/vivado2.2/lab6/Cpu_painting/lab/lab.srcs/constrs_1/imports/cod_projects/Nexys4DDR_Master.xdc
+  add_files -quiet Y:/Programs/Cpu_painting/lab/lab.runs/synth_1/pdu_cpu.dcp
+  read_ip -quiet Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/VRAM/VRAM.xci
+  read_ip -quiet Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/clk50/clk50.xci
+  read_ip -quiet Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/instrcution_memory/instrcution_memory.xci
+  read_ip -quiet Y:/Programs/Cpu_painting/lab/lab.srcs/sources_1/ip/data_memory/data_memory.xci
+  read_xdc Y:/Programs/Cpu_painting/lab/lab.srcs/constrs_1/imports/cod_projects/Nexys4DDR_Master.xdc
   link_design -top pdu_cpu -part xc7a100ticsg324-1L
   close_msg_db -file init_design.pb
 } RESULT]
